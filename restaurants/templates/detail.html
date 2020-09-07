@@ -17,12 +17,15 @@
     <p class="card-text">Closing Time: {{restaurant.closing_time}}</p>
     <p class="card-text">Owner: {{restaurant.owner}}</p>
     <hr>
-    {% for item in items %}
-      <p class="card-text">Name: {{item.name}}</p>
-      <p class="card-text">Description: {{item.description}}</p>
-      <p class="card-text">Price: {{item.price}}</p>
-      <hr>
-    {% endfor %}
+    <ul>
+      {% for item in items %}
+        <li>{{item.name}} | {{item.description}} | €{{item.price}}</li>
+
+      {% endfor %}
+
+    </ul>
+    <hr>
+
     <div class="row text-center">
         <div class="col-md-4">
             <a href="{% url 'restaurant-update' restaurant.id %}" class="btn btn-outline-primary btn-block mt-4">Update</a>
